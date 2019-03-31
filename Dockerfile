@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-EXPOSE 80
-
 # Install Packages
 RUN  apt-get update
 RUN  echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -11,7 +9,6 @@ RUN  DEBIAN_FRONTEND=noninteractive apt-get -qq -y install apache2 php7.2 libapa
 # Configure Server
 RUN  rm -rf /etc/apache2/sites-enabled/*
 COPY ./src/build/etc/apache2/apache2.conf /etc/apache2/apache2.conf
-COPY ./src/build/etc/apache2/ports.conf /etc/apache2/ports.conf
 COPY ./src/build/etc/apache2/mods-enabled/dir.conf /etc/apache2/mods-enabled/dir.conf
 COPY ./src/build/etc/apache2/sites-enabled/site.conf /etc/apache2/sites-enabled/site.conf
 COPY ./src/build/etc/php/7.2/apache2/php.ini /etc/php/7.2/apache2/php.ini
