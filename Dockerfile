@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+EXPOSE 80
+
 # Install Packages
 RUN  apt-get update
 RUN  echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
