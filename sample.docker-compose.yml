@@ -8,9 +8,9 @@ services:
     volumes:
       - ./src/public:/var/www/html
     environment:
-        - API_BASE_URI=http://10.3.141.125:5050/api/v1
+        - API_BASE_URI=http://#/api/v1
         - SECONDS_BETWEEN_LOGIN_TRIES=7
         - SECONDS_FIRST_LOGIN_TRY=7
         - MAINTENANCE_MODE=0
-        - OAUTH_SECRET=gnu8hug54vo8nhwfsergknuxvnxuloo
+        - OAUTH_SECRET=#
 
